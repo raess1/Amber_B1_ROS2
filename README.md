@@ -46,9 +46,11 @@ This enables:
 - Launching of setup scripts via `ros2 launch amber_* <launch_script>`
 - Discoverability of shared resources
 
-WORKING:
+WORKING: (WP)
 - `ros2 launch amber_b1_description view_robot_ex.launch.py`
+- `ros2 launch amber_arm_moveit_config demo.launch.py`
 
 TODO:
 - Get the URDF work correctly from `ros2 launch amber_b1_description view_robot.launch.py`
-- Troubleshoot the moveit launch `ros2 launch amber_arm_moveit_config demo.launch.py`
+- Add Gripper to urdf.
+- Add Gripper Ctrl.
