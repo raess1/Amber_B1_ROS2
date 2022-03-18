@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="amber_b1">
+    <xacro:arg name="prefix" default="" />
+    <xacro:arg name="is_hw" default="1"/>
+    <xacro:arg name="is_ethercat" default="0"/>
+
+    <xacro:include filename="$(find amber_b1_description)/urdf/amber_b1_description.urdf.xacro" />
+    <xacro:include filename="$(find amber_b1_description)/urdf/amber_b1.ros2_control.xacro" />
+
+    <xacro:amberb1 prefix="$(arg prefix)"/>
+    <xacro:amberb1_ros2_control prefix="$(arg prefix)" is_hw="$(arg is_hw)" is_ethercat="$(arg is_ethercat)"/>
+</robot>

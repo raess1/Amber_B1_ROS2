@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="amber_b1">
+  <link name="world">
+  </link>
+  <joint name="amber_joint_base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="6.237E-05 0.00031998 0.048235"
+        rpy="0 0 0" />
+      <mass
+        value="0.26734" />
+      <inertia
+        ixx="0.00029777"
+        ixy="5.8953E-08"
+        ixz="-3.3641E-08"
+        iyy="0.00024467"
+        iyz="2.2995E-07"
+        izz="0.00035934" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amber_b1_description/meshes/base_link.STL"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.62745 0.62745 0.62745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+                <mesh filename="package://amber_b1_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-7.1956E-05 -0.0006525 0.065648"
+        rpy="0 0 0" />
+      <mass
+        value="0.2539" />
+      <inertia
+        ixx="0.00013206"
+        ixy="-1.112E-07"
+        ixz="5.8071E-08"
+        iyy="0.00021227"
+        iyz="-7.2775E-06"
+        izz="0.00013113" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+                <mesh filename="package://amber_b1_description/meshes/one_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.83922 0.44706 0.38431 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+                <mesh filename="package://amber_b1_description/meshes/one_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.082"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.4435"
+      upper="2.4435"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="5.7141E-05 0.080805 -0.0071326"
+        rpy="0 0 0" />
+      <mass
+        value="0.26004" />
+      <inertia
+        ixx="0.00027467"
+        ixy="1.0052E-07"
+        ixz="9.7156E-08"
+        iyy="0.00015654"
+        iyz="-3.0164E-06"
+        izz="0.00029313" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://amber_b1_description/meshes/two_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.66667 0.66667 0.66667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://amber_b1_description/meshes/two_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.025 0.0865"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.3213"
+      upper="2.3213"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="7.536E-05 0.00081876 0.06767"
+        rpy="0 0 0" />
+      <mass
+        value="0.19745" />
+      <inertia
+        ixx="8.8302E-05"
+        ixy="-1.0051E-07"
+        ixz="-9.7553E-08"
+        iyy="0.00014017"
+        iyz="5.8084E-06"
+        izz="8.488E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://amber_b1_description/meshes/three_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.83922 0.44706 0.38431 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://amber_b1_description/meshes/three_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0 0.1364 -0.025"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.2863"
+      upper="2.2863"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="5.5658E-05 0.075812 -0.010096"
+        rpy="0 0 0" />
+      <mass
+        value="0.2255" />
+      <inertia
+        ixx="0.00018432"
+        ixy="9.341E-08"
+        ixz="9.3583E-08"
+        iyy="0.00014008"
+        iyz="5.464E-09"
+        izz="0.00019346" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://amber_b1_description/meshes/four_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.66667 0.66667 0.66667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://amber_b1_description/meshes/four_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0 -0.025 0.0811"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.2863"
+      upper="2.2863"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-6.47608224975801E-05 -0.000135644729966451 0.0681146474008698"
+        rpy="0 0 0" />
+      <mass
+        value="0.188342091601826" />
+      <inertia
+        ixx="8.57208499432024E-05"
+        ixy="-9.36285319821068E-08"
+        ixz="9.3610025889588E-08"
+        iyy="0.000135395618146542"
+        iyz="-5.79908404802222E-06"
+        izz="8.20376711496822E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://amber_b1_description/meshes/five_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.83921568627451 0.447058823529412 0.384313725490196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://amber_b1_description/meshes/five_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0 0.121 -0.025"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.2863"
+      upper="2.2863"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="-5.3512302833054E-05 -0.0764997090438678 -0.0106346714964407"
+        rpy="0 0 0" />
+      <mass
+        value="0.228014101529845" />
+      <inertia
+        ixx="0.000184226138693011"
+        ixy="9.34105969132088E-08"
+        ixz="-9.35833296390346E-08"
+        iyy="0.000140231791267273"
+        iyz="-9.86104029565552E-09"
+        izz="0.000193377959750286" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://amber_b1_description/meshes/six_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.666666666666667 0.666666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://amber_b1_description/meshes/six_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="0 0.025 0.0811"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link5" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.2863"
+      upper="2.2863"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="link7">
+    <inertial>
+      <origin
+        xyz="-1.5306E-10 3.6809E-05 0.020162"
+        rpy="0 0 0" />
+      <mass
+        value="0.030725" />
+      <inertia
+        ixx="9.1931E-06"
+        ixy="1.8624E-13"
+        ixz="-7.0127E-14"
+        iyy="9.217E-06"
+        iyz="1.7076E-08"
+        izz="8.0903E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://amber_b1_description/meshes/seven_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.94902 0.75686 0.17647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://amber_b1_description/meshes/seven_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint7"
+    type="revolute">
+    <origin
+      xyz="0 -0.121 -0.025"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link6" />
+    <child
+      link="link7" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-314"
+      upper="314"
+      effort="100"
+      velocity="10" />
+  </joint>
+
+    <ros2_control name="amber_b1_position" type="system">
+      <hardware>
+        <plugin>AmberB1Hardware</plugin>
+        <param name="param_hw_start_duration_sec">1</param>
+        <param name="param_hw_stop_duration_sec">2</param>
+      </hardware>
+
+      <joint name="joint1">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint2">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint3">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint4">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint5">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint6">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint7">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+</robot>

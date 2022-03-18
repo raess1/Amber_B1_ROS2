@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="amberb1" params="prefix">
+
+    <material name="${prefix}Silver">
+        <color rgba="0.753 0.753 0.753 1.0"/>
+    </material>
+
+    <link name="${prefix}base_link">
+        <inertial>
+            <origin xyz="1.2397E-05 -0.00028943 0.043313" rpy="0 0 0" />
+            <mass value="0.54367" />
+            <inertia
+                    ixx="0.00652212"
+                    ixy="0.00000341"
+                    ixz="0.00000248"
+                    iyy="0.00131412"
+                    iyz="-0.00001009"
+                    izz="0.00635100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/base_link.STL" />
+            </geometry>
+            <material name="${prefix}Silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/base_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="one_Link">
+        <inertial>
+            <origin xyz="3.6419E-06 0.0012261 0.065095" rpy="0 0 0" />
+            <mass value="0.45633" />
+            <inertia
+                    ixx="0.00129553"
+                    ixy="0.00000285"
+                    ixz="0.00000119"
+                    iyy="0.00077465"
+                    iyz="0.00002852"
+                    izz="0.00138672" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/one_Link.STL" />
+            </geometry>
+            <material name="${prefix}Silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/one_Link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="${prefix}joint1" type="revolute">
+        <origin xyz="0 0 0.0825" rpy="0 0 0" />
+        <parent link="${prefix}base_link" />
+        <child link="${prefix}one_Link" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.4435" upper="2.4435" effort="100" velocity="3.1415" />
+    </joint>
+
+    <link name="${prefix}two_Link">
+        <inertial>
+            <origin xyz="2.5765E-06 -0.065465 -0.0031342" rpy="0 0 0" />
+            <mass value="0.66129" />
+            <inertia
+                    ixx="0.00337755"
+                    ixy="0.00000306"
+                    ixz="0.00000032"
+                    iyy="0.00284903"
+                    iyz="-0.00086610"
+                    izz="0.00151256" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/two_Link.STL" />
+            </geometry>
+            <material name="${prefix}Silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/two_Link.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="${prefix}joint2" type="revolute">
+        <origin xyz="0 0.0275 0.0853" rpy="-1.5708 0 0" />
+        <parent link="${prefix}one_Link" />
+        <child link="${prefix}two_Link" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.3213" upper="2.3213" effort="100" velocity="3.1415" />
+    </joint>
+    <link name="${prefix}three_Link">
+        <inertial>
+            <origin xyz="-3.6433E-06 -0.0012152 0.065099" rpy="0 0 0" />
+            <mass value="0.45615" />
+            <inertia
+                    ixx="0.00129528"
+                    ixy="-0.00000285"
+                    ixz="0.00000119"
+                    iyy="0.00077451"
+                    iyz="-0.00002839"
+                    izz="0.00138663" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/three_Link.STL" />
+            </geometry>
+            <material name="${prefix}Silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/three_Link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="${prefix}joint3" type="revolute">
+        <origin xyz="0 -0.1289 -0.0275" rpy="1.5708 0 0" />
+        <parent link="${prefix}two_Link" />
+        <child link="${prefix}three_Link" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.2863" upper="2.2863" effort="100" velocity="3.1415" />
+    </joint>
+    <link name="${prefix}four_Link">
+        <inertial>
+            <origin xyz="2.6912E-06 -0.062187 0.0028502" rpy="0 0 0" />
+            <mass value="0.52945" />
+            <inertia
+                    ixx="0.00251547"
+                    ixy="0.00000087"
+                    ixz="0.00000005"
+                    iyy="0.00213890"
+                    iyz="0.00069146"
+                    izz="0.00083211" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/four_Link.STL" />
+            </geometry>
+            <material name="${prefix}Silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/four_Link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="${prefix}joint4" type="revolute">
+        <origin xyz="0 -0.0275 0.0853" rpy="-1.5708 0 0" />
+        <parent link="${prefix}three_Link" />
+        <child link="${prefix}four_Link" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.2863" upper="2.2863" effort="100" velocity="3.1415" />
+    </joint>
+    <link name="${prefix}five_Link">
+        <inertial>
+            <origin xyz="-4.2445E-06 0.0013726 0.059518" rpy="0 0 0" />
+            <mass value="0.3436" />
+            <inertia
+                    ixx="0.00070485"
+                    ixy="0.00000042"
+                    ixz="0.00000168"
+                    iyy="0.00036926"
+                    iyz="0.00000639"
+                    izz="0.00068220" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/five_Link.STL" />
+            </geometry>
+            <material name="${prefix}Silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/five_Link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="${prefix}joint5" type="revolute">
+        <origin xyz="0 -0.1251 0.0275" rpy="1.5708 0 0" />
+        <parent link="${prefix}four_Link" />
+        <child link="${prefix}five_Link" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.2863" upper="2.2863" effort="100" velocity="5.23" />
+    </joint>
+    <link name="${prefix}six_Link">
+        <inertial>
+            <origin xyz="-2.9791E-06 -0.066652 -0.0023206" rpy="0 0 0" />
+            <mass value="0.47734" />
+            <inertia
+                    ixx="0.00199496"
+                    ixy="0.00000072"
+                    ixz="0.00000031"
+                    iyy="0.00165669"
+                    iyz="-0.00053834"
+                    izz="0.00074501" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/six_Link.STL" />
+            </geometry>
+            <material name="${prefix}Silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/six_Link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="${prefix}joint6" type="revolute">
+        <origin xyz="0 0.0251 0.079" rpy="-1.5708 0 0" />
+        <parent link="${prefix}five_Link" />
+        <child link="${prefix}six_Link" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.2863" upper="2.2863" effort="100" velocity="5.23" />
+    </joint>
+    <link name="${prefix}seven_Link">
+        <inertial>
+            <origin xyz="1.7162E-06 -6.9761E-05 0.016576" rpy="0 0 0" />
+            <mass value="0.046213" />
+            <inertia
+                    ixx="0.00001545"
+                    ixy="0.00000000"
+                    ixz="0.00000000"
+                    iyy="0.00001694"
+                    iyz="-0.00000002"
+                    izz="0.00001940" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/seven_Link.STL" />
+            </geometry>
+            <material name="${prefix}Silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///$(find amber_b1_description)/meshes/seven_Link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="${prefix}joint7" type="revolute">
+        <origin xyz="0 -0.1236 -0.0251" rpy="1.5708 0 0" />
+        <parent link="${prefix}six_Link" />
+        <child link="${prefix}seven_Link" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.05" upper="3.05" effort="100" velocity="5.23" />
+    </joint>
+    <link name="${prefix}link_eef" />
+      <joint
+        name="${prefix}joint_eef"
+        type="fixed">
+        <origin
+          xyz="0 0 0.0385"
+          rpy="0 0 0" />
+        <parent
+          link="${prefix}seven_Link" />
+        <child
+          link="${prefix}link_eef" />
+      </joint>
+    </xacro:macro>
+
+</robot>

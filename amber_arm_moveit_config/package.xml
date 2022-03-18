@@ -1,0 +1,28 @@
+<package>
+
+  <name>amber_arm_moveit_config</name>
+  <version>0.0.0</version>
+  <description>Amber b1 Arm MoveIt Config Package</description>
+  <author email="jimenojmm@gmail.com">Juan Miguel Jimeno</author>
+  <maintainer email="robinae@hotmail.se">R_frojd</maintainer>
+  <license>Apache License 2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <run_depend>ament_index_python</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>joint_state_publisher_gui</run_depend>
+  <run_depend>moveit_kinematics</run_depend>
+  <run_depend>moveit_planners_ompl</run_depend>
+  <run_depend>moveit_ros_move_group</run_depend>
+  <run_depend>moveit_ros_visualization</run_depend>
+  <run_depend>moveit_ros_perception</run_depend>
+  <run_depend>moveit_simple_controller_manager</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>robot_arm_description</run_depend>
+  <run_depend>ros2_control</run_depend>
+  <run_depend>ros2_controllers</run_depend>
+  <run_depend>tf2_ros</run_depend>
+  <run_depend>xacro</run_depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

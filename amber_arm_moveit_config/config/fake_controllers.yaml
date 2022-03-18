@@ -1,0 +1,13 @@
+controller_list:
+  - name: fake_amber_arm_controller
+    joints:
+      - joint1
+      - joint2
+      - joint3
+      - joint4
+      - joint5
+      - joint6
+      - joint7
+initial:
+  - group: amber_arm
+    pose: home
