@@ -32,10 +32,13 @@ https://moveit.ros.org/install-moveit2/binary/
 ```bash
 source /opt/ros/galactic/setup.bash
 ```
+
 ```bash
 mkdir -p ~/amber_ws/src
 cd ~/amber_ws/src
-``````bash
+```
+
+```bash
 . install/local_setup.bash
 ```
 
