@@ -44,6 +44,7 @@ source /opt/ros/galactic/local_setup.bash
 
 ```bash
 cd amber_ws
+```
 
 ```bash
 . install/local_setup.bash
