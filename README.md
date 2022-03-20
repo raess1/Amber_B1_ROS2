@@ -16,7 +16,16 @@ Below is an overview of the included packages, with a small description of their
 ### Requirements
 
 - **OS:** Ubuntu 20.04 (Focal)
+- **OS:** ROS2 Galactic
   - Other distributions might work, but they were not tested.
+
+### Install ROS and MoveIt2
+https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html
+```
+https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html
+```
+
+### Create Workspace
 
 
 ### Building
