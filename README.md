@@ -2,6 +2,8 @@
 
 This package contains configuration for Amber B1 that enables its manipulation with MoveIt 2.
 
+![galactic](https://user-images.githubusercontent.com/6362413/159165112-46f7a940-4231-4605-b35d-27c4d9becec1.PNG)
+
 ## Overview
 
 Below is an overview of the included packages, with a small description of their purpose. For more information, please see README.md of each individual package.
