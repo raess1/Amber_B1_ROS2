@@ -20,8 +20,11 @@ Below is an overview of the included packages, with a small description of their
   - Other distributions might work, but they were not tested.
 
 ### Install ROS and MoveIt2
+```bash
 https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html
 ```
+
+```bash
 https://moveit.ros.org/install-moveit2/binary/
 ```
 
