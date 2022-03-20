@@ -1,6 +1,8 @@
-# Amber_B1_ROS2
+# Amber_B1_ROS2 Galactic
 
 This package contains configuration for Amber B1 that enables its manipulation with MoveIt 2.
+
+![galactic](https://user-images.githubusercontent.com/6362413/159165112-46f7a940-4231-4605-b35d-27c4d9becec1.PNG)
 
 ## Overview
 
@@ -28,6 +30,8 @@ mkdir -p amber_ws/src && cd amber_ws
 git clone https://github.com/raess1/Amber_B1_ROS2.git
 # Install external dependencies via rosdep
 rosdep install -r --from-paths src --ignore-src --rosdistro ${ROS_DISTRO}
+# Install backward-ros
+sudo apt install ros-galactic-backward-ros
 # Build with colcon
 colcon build --merge-install --symlink-install --cmake-args "-DCMAKE_BUILD_TYPE=Release"
 ```
@@ -37,7 +41,15 @@ colcon build --merge-install --symlink-install --cmake-args "-DCMAKE_BUILD_TYPE=
 Before utilising this package, remember to source the ROS 2 workspace overlay.
 
 ```bash
-source amber_ws/install/local_setup.bash
+source /opt/ros/galactic/local_setup.bash
+```
+
+```bash
+cd amber_ws
+```
+
+```bash
+. install/local_setup.bash
 ```
 
 This enables:
@@ -49,8 +61,12 @@ This enables:
 WORKING: (WP)
 - `ros2 launch amber_b1_description view_robot_ex.launch.py`
 - `ros2 launch amber_arm_moveit_config demo.launch.py`
+- (if error) `LC_NUMERIC=en_US.UTF-8 ros2 launch amber_arm_moveit_config demo.launch.py`
 
 TODO:
 - Get the URDF work correctly from `ros2 launch amber_b1_description view_robot.launch.py`
 - Add Gripper to urdf.
 - Add Gripper Ctrl.
+
+
+
