@@ -22,7 +22,7 @@ Below is an overview of the included packages, with a small description of their
 ### Install ROS and MoveIt2
 https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html
 ```
-https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html
+https://moveit.ros.org/install-moveit2/binary/
 ```
 
 ### Create Workspace
