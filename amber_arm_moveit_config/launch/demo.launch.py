@@ -25,18 +25,18 @@ def generate_launch_description():
 
     ld.add_action(DeclareLaunchArgument('db_path', default_value=str(moveit_config_path / 'default_warehouse_mongo_db'),
                                         description='Allow user to specify database location'))
-    ld.add_action(DeclareLaunchArgument('debug', default_value='false', choices=['true', 'false'],
+    ld.add_action(DeclareLaunchArgument('debug', default_value='true', choices=['true', 'false'],
                                         description='By default, we are not in debug mode'))
 
     # MoveIt's "demo" mode replaces the real robot driver with the joint_state_publisher.
     # The latter one maintains and publishes the current joint configuration of the simulated robot.
     # It also provides a GUI to move the simulated robot around "manually".
     # This corresponds to moving around the real robot without the use of MoveIt.
-    ld.add_action(DeclareLaunchArgument('use_gui', default_value='false', choices=['true', 'false'],
+    ld.add_action(DeclareLaunchArgument('use_gui', default_value='true', choices=['true', 'false'],
                                         description="By default, hide joint_state_publisher's GUI"))
     ld.add_action(DeclareLaunchArgument('use_rviz', default_value='true', choices=['true', 'false']))
 
-    ld.add_action(DeclareLaunchArgument('fake_robot', default_value='false', choices=['true', 'false']))
+    ld.add_action(DeclareLaunchArgument('fake_robot', default_value='true', choices=['true', 'false']))
 
     # Load the URDF, SRDF and other .yaml configuration files
     robot_description_content = Command(
@@ -103,14 +103,14 @@ def generate_launch_description():
 
     spawner_node = Node(
         package='controller_manager',
-        executable='spawner.py',
+        executable='spawner',
         arguments=['amber_arm_controller'],
     )
     ld.add_action(spawner_node)
 
     spawner_node2 = Node(
         package='controller_manager',
-        executable='spawner.py',
+        executable='spawner',
         output='screen',
         arguments=['joint_state_broadcaster'],
         condition=IfCondition(LaunchConfiguration("fake_robot")),

@@ -7,6 +7,10 @@
                 <param name="is_hw">${is_hw}</param>
                 <param name="is_ethercat">${is_ethercat}</param>
             </hardware>
+            <hardware>
+                <plugin>fake_components/GenericSystem</plugin>
+            </hardware>
+
 
             <joint name="${prefix}joint1">
                 <command_interface name="position">
