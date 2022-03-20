@@ -29,7 +29,15 @@ https://moveit.ros.org/install-moveit2/binary/
 ```
 
 ### Create Workspace
-
+```bash
+source /opt/ros/galactic/setup.bash
+```
+```bash
+mkdir -p ~/amber_ws/src
+cd ~/amber_ws/src
+``````bash
+. install/local_setup.bash
+```
 
 ### Building
 
