@@ -5,20 +5,15 @@ controller_manager:
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-    amber_position_controller:
+    forward_position_controller:
       type: forward_command_controller/ForwardCommandController
 
-    amber_position_trajectory_controller:
+    position_trajectory_controller:
       type: joint_trajectory_controller/JointTrajectoryController
-      #position_controllers/JointGroupPositionController
-      #forward_command_controller/ForwardCommandController
-      #joint_trajectory_controller/JointTrajectoryController
-      #effort_controllers/JointGroupEffortController
 
-amber_forward_position_controller:
+
+forward_position_controller:
   ros__parameters:
-    action_ns: forward_position_controller
-    default: false
     joints:
       - joint1
       - joint2
@@ -30,10 +25,8 @@ amber_forward_position_controller:
     interface_name: position
 
 
-amber_position_trajectory_controller:
+position_trajectory_controller:
   ros__parameters:
-    action_ns: follow_joint_trajectory
-    default: true
     joints:
       - joint1
       - joint2
@@ -45,6 +38,7 @@ amber_position_trajectory_controller:
 
     command_interfaces:
       - position
+      - velocity
 
     state_interfaces:
       - position

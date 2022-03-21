@@ -7,6 +7,6 @@
     <xacro:include filename="$(find amber_b1_description)/urdf/amber_b1_description.urdf.xacro" />
     <xacro:include filename="$(find amber_b1_description)/urdf/amber_b1.ros2_control.xacro" />
 
-    <xacro:amberb1 prefix="$(arg prefix)"/>
+    <xacro:amber_arm prefix="$(arg prefix)"/>
     <xacro:amberb1_ros2_control prefix="$(arg prefix)" is_hw="$(arg is_hw)" is_ethercat="$(arg is_ethercat)"/>
 </robot>

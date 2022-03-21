@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:macro name="amberb1" params="prefix">
+    <xacro:macro name="amber_arm" params="prefix">
 
     <material name="${prefix}Silver">
         <color rgba="0.753 0.753 0.753 1.0"/>
