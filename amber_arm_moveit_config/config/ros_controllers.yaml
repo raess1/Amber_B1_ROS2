@@ -2,7 +2,7 @@ controller_manager:
   ros__parameters:
     update_rate: 200  # Hz
 
-    joint_state_broadcaster:
+    amber_joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
     amber_position_controller:
@@ -45,6 +45,7 @@ amber_position_trajectory_controller:
 
     command_interfaces:
       - position
+      - velocity
 
     state_interfaces:
       - position

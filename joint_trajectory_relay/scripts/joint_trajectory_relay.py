@@ -13,7 +13,7 @@ class JointTrajectoryRelay(Node):
 
 		state_subscription = self.create_subscription(
 			JointTrajectoryControllerState,
-			'/robot_arm_controller/state',
+			'/amber_position_trajectory_controller/state',
 			self._state_callback,
 			10
 		)
@@ -23,7 +23,7 @@ class JointTrajectoryRelay(Node):
 		trajectory_msg = JointTrajectory()
 		trajectory_points = JointTrajectoryPoint()
 
-		desired_positions = msg.desired.positions
+		desired_positions = msg.actual.positions
 		joint_names = msg.joint_names
 		
 		for pos, joint_name in zip(desired_positions, joint_names):

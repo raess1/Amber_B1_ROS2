@@ -32,11 +32,11 @@ def generate_launch_description():
     # The latter one maintains and publishes the current joint configuration of the simulated robot.
     # It also provides a GUI to move the simulated robot around "manually".
     # This corresponds to moving around the real robot without the use of MoveIt.
-    ld.add_action(DeclareLaunchArgument('use_gui', default_value='false', choices=['true', 'false'],
+    ld.add_action(DeclareLaunchArgument('use_gui', default_value='true', choices=['true', 'false'],
                                         description="By default, hide joint_state_publisher's GUI"))
     ld.add_action(DeclareLaunchArgument('use_rviz', default_value='true', choices=['true', 'false']))
 
-    ld.add_action(DeclareLaunchArgument('fake_robot', default_value='true', choices=['true', 'false']))
+    ld.add_action(DeclareLaunchArgument('fake_robot', default_value='false', choices=['true', 'false']))
 
     # Load the URDF, SRDF and other .yaml configuration files
     robot_description_content = Command(
@@ -55,7 +55,7 @@ def generate_launch_description():
     move_group_launch_py = PythonLaunchDescriptionSource(str(moveit_config_path / 'launch/move_group.launch.py'))
     move_group_launch_args = {
         'allow_trajectory_execution': 'true',
-        'fake_execution': 'false',
+        'fake_execution': 'true',
         'info': 'true',
         'debug': LaunchConfiguration('debug'),
         'pipeline': LaunchConfiguration('pipeline'),
@@ -100,6 +100,7 @@ def generate_launch_description():
                     ],
     )
     ld.add_action(fake_joint_driver_node)
+    
 
     spawner_node = Node(
         package='controller_manager',

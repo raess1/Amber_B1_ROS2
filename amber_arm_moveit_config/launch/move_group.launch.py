@@ -22,7 +22,7 @@ def generate_launch_description():
     ld.add_action(DeclareLaunchArgument('debug', default_value='false', choices=['true', 'false']))
     ld.add_action(DeclareLaunchArgument('pipeline', default_value='ompl', choices=['ompl', 'chomp']))
     ld.add_action(DeclareLaunchArgument('allow_trajectory_execution', default_value='true'))
-    ld.add_action(DeclareLaunchArgument('fake_execution', default_value='true'))
+    ld.add_action(DeclareLaunchArgument('fake_execution', default_value='false'))
     ld.add_action(DeclareLaunchArgument('max_safe_path_cost', default_value='1'))
     ld.add_action(DeclareLaunchArgument('jiggle_fraction', default_value='0.05'))
     ld.add_action(DeclareLaunchArgument('publish_monitored_planning_scene', default_value='true'))
