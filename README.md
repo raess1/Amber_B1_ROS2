@@ -83,7 +83,55 @@ This enables:
 - Launching of setup scripts via `ros2 launch amber_* <launch_script>`
 - Discoverability of shared resources
 
-WORKING: (WP)
+### Running MoveIt2 and Amber b1
+
+On Robot:
+- `commmnd 1`
+- `command 2`
+
+On Desktop:
+- Terminal 1:
+```bash
+source /opt/ros/galactic/local_setup.bash
+```
+
+```bash
+cd amber_ws
+```
+
+```bash
+. install/local_setup.bash
+```
+
+```bash
+ros2 launch amber_arm_moveit_config pos.launch.py
+```
+- Terminal 2:
+- Terminal 1:
+```bash
+source /opt/ros/galactic/local_setup.bash
+```
+
+```bash
+cd amber_ws
+```
+
+```bash
+. install/local_setup.bash
+```
+
+```bash
+ros2 run joint_trajectory_relay joint_trajectory_relay.py
+```
+
+
+
+
+
+
+
+
+
 - `ros2 launch amber_b1_description view_robot_ex.launch.py`
 - `ros2 launch amber_arm_moveit_config demo.launch.py`
 - (if error) `LC_NUMERIC=en_US.UTF-8 ros2 launch amber_arm_moveit_config demo.launch.py`
