@@ -107,7 +107,6 @@ cd amber_ws
 ros2 launch amber_arm_moveit_config pos.launch.py
 ```
 - Terminal 2:
-- Terminal 1:
 ```bash
 source /opt/ros/galactic/local_setup.bash
 ```
@@ -124,20 +123,12 @@ cd amber_ws
 ros2 run joint_trajectory_relay joint_trajectory_relay.py
 ```
 
+### Notes
 
+- (if error) `LC_NUMERIC=en_US.UTF-8 ros2 launch amber_arm_moveit_config pos.launch.py`
 
-
-
-
-
-
-
-- `ros2 launch amber_b1_description view_robot_ex.launch.py`
-- `ros2 launch amber_arm_moveit_config demo.launch.py`
-- (if error) `LC_NUMERIC=en_US.UTF-8 ros2 launch amber_arm_moveit_config demo.launch.py`
 
 TODO:
-- Get the URDF work correctly from `ros2 launch amber_b1_description view_robot.launch.py`
 - Add Gripper to urdf.
 - Add Gripper Ctrl.
 
