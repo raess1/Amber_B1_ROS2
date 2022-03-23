@@ -9,7 +9,6 @@ find_package(control_msgs REQUIRED)
 find_package(moveit_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
-
 set(THIS_PACKAGE_INCLUDE_DEPENDS
   rclcpp
   std_msgs
@@ -32,7 +31,7 @@ ament_target_dependencies(teleop
 )
 install(
   TARGETS
-    teleop
+  teleop
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION lib/${PROJECT_NAME}
