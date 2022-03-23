@@ -62,18 +62,18 @@ def generate_launch_description():
         )
     }
 
-    pose_tracking_node = Node(
+    servo_node = Node(
         package="moveit_servo",
-        executable="servo_pose_tracking_demo",
-        output="screen",
+        executable="servo_node_main",
         parameters=[
+            servo_params,
             robot_description,
             robot_description_semantic,
-            kinematics_yaml,
-            pose_tracking_params,
-            servo_params,
-            joint_limits_yaml,
         ],
+        output={
+            "stdout": "screen",
+            "stderr": "screen",
+        },
     )
 
     joy_node = Node(
@@ -83,8 +83,8 @@ def generate_launch_description():
     teleop_node = Node(
         package="amber_arm_servo",
         executable="teleop",
-        name="teleop_node",
+        name="teleop",
         output="screen",
     )
 
-    return LaunchDescription([pose_tracking_node, joy_node, teleop_node])
+    return LaunchDescription([servo_node, joy_node, teleop_node])
