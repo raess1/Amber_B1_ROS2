@@ -49,8 +49,8 @@
 
 // We'll just set up parameters here
 const std::string JOY_TOPIC = "/joy";
-const std::string TWIST_TOPIC = "/servo_server/delta_twist_cmds";
-const std::string JOINT_TOPIC = "/servo_server/delta_joint_cmds";
+const std::string TWIST_TOPIC = "/servo_node/delta_twist_cmds";
+const std::string JOINT_TOPIC = "/servo_node/delta_joint_cmds";
 const size_t ROS_QUEUE_SIZE = 10;
 const std::string EEF_FRAME_ID = "link_eef";
 const std::string BASE_FRAME_ID = "base_link";
@@ -146,7 +146,7 @@ public:
     collision_pub_ = this->create_publisher<moveit_msgs::msg::PlanningScene>("/planning_scene", 10);
 
     // Create a service client to start the ServoServer
-    servo_start_client_ = this->create_client<std_srvs::srv::Trigger>("/servo_server/start_servo");
+    servo_start_client_ = this->create_client<std_srvs::srv::Trigger>("/servo_node/start_servo");
     servo_start_client_->wait_for_service(std::chrono::seconds(1));
     servo_start_client_->async_send_request(std::make_shared<std_srvs::srv::Trigger::Request>());
   }
