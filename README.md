@@ -1,4 +1,4 @@
-# Amber_B1_ROS2
+# Amber_B1_ROS2 Servo
 ## Note this is not installed or ran on the Amber b1 computer.
 
 This package contains configuration for Amber B1 that enables its manipulation with MoveIt 2.
