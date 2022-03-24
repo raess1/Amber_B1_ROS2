@@ -97,50 +97,17 @@ On Robot:
 
 On Desktop:
 - Terminal 1:
-```bash
-source /opt/ros/galactic/local_setup.bash
-```
-
-```bash
-cd amber_ws
-```
-
-```bash
-. install/local_setup.bash
-```
 
 ```bash
 ros2 launch amber_arm_moveit_config demo.launch.py
 ```
 - Terminal 2:
-```bash
-source /opt/ros/galactic/local_setup.bash
-```
-
-```bash
-cd amber_ws
-```
-
-```bash
-. install/local_setup.bash
-```
 
 ```bash
 ros2 run joint_trajectory_relay joint_trajectory_relay.py
 ```
 
 - Terminal 3:
-```bash
-source /opt/ros/galactic/local_setup.bash
-```
-
-```bash
-cd amber_ws
-```
-
-```bash
-. install/local_setup.bash
-```
 
 ```bash
 ros2 launch amber_arm_servo servo.launch.py
