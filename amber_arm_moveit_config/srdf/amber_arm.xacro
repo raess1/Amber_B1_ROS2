@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="amberb1">
-  <xacro:macro name="arm">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="amber_arm">
+  <xacro:macro name="amber_arm">
     <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
     <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
     <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
@@ -18,7 +18,7 @@
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <!-- <virtual_joint name="virtual_joint" type="floating" parent_frame="world" child_link="indy7_link0" /> -->
+    <virtual_joint name="fixed_frame" type="fixed" parent_frame="world" child_link="base_link">
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="base_link" link2="one_Link" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="three_Link" reason="Never"/>

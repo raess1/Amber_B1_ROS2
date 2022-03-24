@@ -27,9 +27,7 @@ def generate_launch_description():
     ld.add_action(DeclareLaunchArgument('jiggle_fraction', default_value='0.05'))
     ld.add_action(DeclareLaunchArgument('publish_monitored_planning_scene', default_value='true'))
     # load non-default MoveGroup capabilities (space separated)
-    ld.add_action(DeclareLaunchArgument('capabilities', default_value=''))
     # inhibit these default MoveGroup capabilities (space separated)
-    ld.add_action(DeclareLaunchArgument('disable_capabilities', default_value=''))
 
     planning_parameters = [str(moveit_config_path / 'config') + '/', LaunchConfiguration('pipeline'), '_planning.yaml']
     kinematics_config = str(moveit_config_path / 'config/kinematics.yaml')
@@ -45,8 +43,6 @@ def generate_launch_description():
         'allow_trajectory_execution': LaunchConfiguration('allow_trajectory_execution'),
         'max_safe_path_cost': LaunchConfiguration('max_safe_path_cost'),
         'jiggle_fraction': LaunchConfiguration('jiggle_fraction'),
-        'capabilities': LaunchConfiguration('capabilities'),
-        'disable_capabilities': LaunchConfiguration('disable_capabilities'),
         # Publish the planning scene of the physical robot so that rviz plugin can know actual robot
         'publish_planning_scene': LaunchConfiguration('publish_monitored_planning_scene'),
         'publish_geometry_updates': LaunchConfiguration('publish_monitored_planning_scene'),

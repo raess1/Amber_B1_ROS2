@@ -7,8 +7,12 @@
                 <param name="is_hw">${is_hw}</param>
                 <param name="is_ethercat">${is_ethercat}</param>
             </hardware>
+            <hardware>
+                <plugin>fake_components/GenericSystem</plugin>
+            </hardware>
 
-            <joint name="${prefix}joint1">
+
+            <joint name="joint1">
                 <command_interface name="position">
                     <param name="min">-2.4435</param>
                     <param name="max">2.4435</param>
@@ -21,7 +25,7 @@
                 <state_interface name="velocity"/>
                 <state_interface name="effort"/>
             </joint>
-            <joint name="${prefix}joint2">
+            <joint name="joint2">
                 <command_interface name="position">
                     <param name="min">-2.3213</param>
                     <param name="max">2.3213</param>
@@ -34,7 +38,7 @@
                 <state_interface name="velocity"/>
                 <state_interface name="effort"/>
             </joint>
-            <joint name="${prefix}joint3">
+            <joint name="joint3">
                 <command_interface name="position">
                     <param name="min">-2.2863</param>
                     <param name="max">2.2863</param>
@@ -47,7 +51,7 @@
                 <state_interface name="velocity"/>
                 <state_interface name="effort"/>
             </joint>
-            <joint name="${prefix}joint4">
+            <joint name="joint4">
                 <command_interface name="position">
                     <param name="min">-2.2863</param>
                     <param name="max">2.2863</param>
@@ -60,7 +64,7 @@
                 <state_interface name="velocity"/>
                 <state_interface name="effort"/>
             </joint>
-            <joint name="${prefix}joint5">
+            <joint name="joint5">
                 <command_interface name="position">
                     <param name="min">-2.2863</param>
                     <param name="max">2.2863</param>
@@ -73,7 +77,7 @@
                 <state_interface name="velocity"/>
                 <state_interface name="effort"/>
             </joint>
-            <joint name="${prefix}joint6">
+            <joint name="joint6">
                 <command_interface name="position">
                     <param name="min">-2.2863</param>
                     <param name="max">2.2863</param>
@@ -86,7 +90,7 @@
                 <state_interface name="velocity"/>
                 <state_interface name="effort"/>
             </joint>
-            <joint name="${prefix}joint7">
+            <joint name="joint7">
                 <command_interface name="position">
                     <param name="min">-3.05</param>
                     <param name="max">3.05</param>

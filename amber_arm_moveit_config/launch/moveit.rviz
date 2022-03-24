@@ -4,9 +4,12 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /Global Options1
+        - /MotionPlanning1
         - /TF1/Frames1
+        - /TF1/Frames1/two_Link1
       Splitter Ratio: 0.7425600290298462
-    Tree Height: 222
+    Tree Height: 470
   - Class: rviz_common/Help
     Name: Help
   - Class: rviz_common/Views
@@ -73,16 +76,7 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          one_Link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          two_Link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          three_Link:
+          five_Link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -92,7 +86,16 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          five_Link:
+          link_eef:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          one_Link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          seven_Link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -102,7 +105,12 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          seven_Link:
+          three_Link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          two_Link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -129,7 +137,7 @@ Visualization Manager:
         Goal State Color: 250; 128; 0
         Interactive Marker Size: 0
         Joint Violation Color: 255; 0; 255
-        Planning Group: robot_arm
+        Planning Group: amber_arm
         Query Goal State: true
         Query Start State: false
         Show Workspace: false
@@ -157,16 +165,7 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          one_Link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          two_Link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          three_Link:
+          five_Link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -176,7 +175,16 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          five_Link:
+          link_eef:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          one_Link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          seven_Link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -186,7 +194,12 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          seven_Link:
+          three_Link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          two_Link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -206,45 +219,50 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-          base_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          one_Link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          two_Link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          three_Link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          four_Link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          five_Link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          six_Link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          seven_Link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        five_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        four_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link_eef:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        one_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        seven_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        six_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        three_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        two_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Loop Animation: false
       Name: Trajectory
       Robot Alpha: 0.5
@@ -263,88 +281,45 @@ Visualization Manager:
       Frames:
         All Enabled: false
         base_link:
-          Value: false
-        base_mount:
           Value: true
-        calibration_link:
-          Value: false
-        camera_aligned_depth_to_color_frame:
-          Value: false
-        camera_color_frame:
-          Value: false
-        camera_color_optical_frame:
+        five_Link:
           Value: true
-        camera_depth_frame:
+        four_Link:
           Value: false
-        camera_depth_optical_frame:
+        link_eef:
           Value: false
-        camera_link:
+        one_Link:
           Value: false
-        elbow_link:
+        seven_Link:
           Value: false
-        finger_link:
+        six_Link:
           Value: false
-        gripper_link:
+        three_Link:
           Value: false
-        mimic_finger_link:
+        two_Link:
           Value: false
-        pan_link:
-          Value: false
-        shoulder_link:
-          Value: false
-        tool_link:
-          Value: true
-        wrist0_link:
-          Value: false
-        wrist1_link:
-          Value: false
-        wrist2_link:
-          Value: false
-      Marker Scale: 0.5
+      Marker Scale: 1
       Name: TF
-      Show Arrows: false
+      Show Arrows: true
       Show Axes: true
       Show Names: false
       Tree:
-        World:
-          base_link:
-            one_Link:
-              two_Link:
-                three_Link:
-                  four_Link:
-                    five_Link:
-                      six_Link:
-                        seven_Link:
-                          eff_link:
-                            {}
-          calibration_link:
-            camera_color_optical_frame:
-              {}
+        base_link:
+          one_Link:
+            two_Link:
+              three_Link:
+                four_Link:
+                  five_Link:
+                    six_Link:
+                      seven_Link:
+                        link_eef:
+                          {}
       Update Interval: 0
       Value: true
-    - Class: rviz_default_plugins/Camera
-      Enabled: true
-      Image Rendering: background and overlay
-      Name: Camera
-      Overlay Alpha: 0.5
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /camera/color/image_raw
-      Value: true
-      Visibility:
-        Grid: true
-        MotionPlanning: true
-        TF: true
-        Trajectory: true
-        Value: true
-      Zoom Factor: 1
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_mount
+    Fixed Frame: base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -359,29 +334,27 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 2.3439857959747314
+      Distance: 5.189348220825195
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.014743114821612835
-        Y: -0.37225574254989624
-        Z: -0.0935501679778099
+        X: -0.09238628298044205
+        Y: -0.27028128504753113
+        Z: 0.10323485732078552
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4153980016708374
-      Target Frame: base_mount
+      Pitch: 0.33039748668670654
+      Target Frame: base_link
       Value: Orbit (rviz_default_plugins)
-      Yaw: 0.7504016757011414
+      Yaw: 1.2254009246826172
     Saved: ~
 Window Geometry:
-  Camera:
-    collapsed: false
   Displays:
     collapsed: false
   Height: 1136
@@ -393,11 +366,11 @@ Window Geometry:
     collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000200000000000001f300000416fc0200000008fb000000100044006900730070006c006100790073010000003d0000016f000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000c00430061006d00650072006101000001b2000001060000002800fffffffb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000004100fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000002be000001950000017d00fffffffb0000003c005400720061006a006500630074006f007200790020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000004100fffffffb0000000c00430061006d0065007200610100000383000000d0000000000000000000000002000005570000011efc0100000001fb0000000a0056006900650077007300000001f9000005570000010000ffffff000005570000041600000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000200000000000001f300000416fc0200000008fb000000100044006900730070006c006100790073010000003d00000267000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000c00430061006d006500720061010000028d0000002b0000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000002aa000001a90000017d00fffffffb0000003c005400720061006a006500630074006f007200790020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000004100fffffffb0000000c00430061006d0065007200610100000383000000d0000000000000000000000002000005570000011efc0100000001fb0000000a0056006900650077007300000001f9000005570000010000ffffff000005570000041600000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Trajectory - Trajectory Slider:
     collapsed: false
   Views:
     collapsed: false
   Width: 1872
   X: 48
-  Y: 27
+  Y: 279

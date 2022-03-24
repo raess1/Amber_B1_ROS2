@@ -1,11 +1,5 @@
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-
-    <xacro:macro name="amber_arm" params="prefix">
-
-    <material name="${prefix}Silver">
-        <color rgba="0.753 0.753 0.753 1.0"/>
-    </material>
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="amber_arm">
   <link name="world">
   </link>
   <joint name="amber_joint_base" type="fixed">
@@ -13,7 +7,6 @@
     <child link="base_link"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
-
     <link name="base_link">
         <inertial>
             <origin xyz="1.2397E-05 -0.00028943 0.043313" rpy="0 0 0" />
@@ -31,7 +24,7 @@
             <geometry>
                 <mesh filename="file:///$(find amber_b1_description)/meshes/base_link.STL" />
             </geometry>
-            <material name="${prefix}Silver"/>
+            <material name="Silver"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -57,7 +50,7 @@
             <geometry>
                 <mesh filename="file:///$(find amber_b1_description)/meshes/one_Link.STL" />
             </geometry>
-            <material name="${prefix}Silver"/>
+            <material name="Silver"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -91,7 +84,7 @@
             <geometry>
                 <mesh filename="file:///$(find amber_b1_description)/meshes/two_Link.STL" />
             </geometry>
-            <material name="${prefix}Silver"/>
+            <material name="Silver"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -125,7 +118,7 @@
             <geometry>
                 <mesh filename="file:///$(find amber_b1_description)/meshes/three_Link.STL" />
             </geometry>
-            <material name="${prefix}Silver"/>
+            <material name="Silver"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -158,7 +151,7 @@
             <geometry>
                 <mesh filename="file:///$(find amber_b1_description)/meshes/four_Link.STL" />
             </geometry>
-            <material name="${prefix}Silver"/>
+            <material name="Silver"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -191,7 +184,7 @@
             <geometry>
                 <mesh filename="file:///$(find amber_b1_description)/meshes/five_Link.STL" />
             </geometry>
-            <material name="${prefix}Silver"/>
+            <material name="Silver"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -257,7 +250,7 @@
             <geometry>
                 <mesh filename="file:///$(find amber_b1_description)/meshes/seven_Link.STL" />
             </geometry>
-            <material name="${prefix}Silver"/>
+            <material name="Silver"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -285,6 +278,62 @@
         <child
           link="link_eef" />
       </joint>
-    </xacro:macro>
 
+    <ros2_control name="amber_b1_position" type="system">
+      <hardware>
+        <plugin>AmberB1Hardware</plugin>
+        <param name="param_hw_start_duration_sec">1</param>
+        <param name="param_hw_stop_duration_sec">2</param>
+      </hardware>
+
+      <joint name="joint1">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint2">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint3">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint4">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint5">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint6">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint7">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
 </robot>
