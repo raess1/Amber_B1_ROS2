@@ -117,7 +117,7 @@ ros2 launch amber_arm_servo servo.launch.py
 Before starting this, move the robot to a starting point away from the zero state to avoid triggerers of singularity.
 Execute the robot to this position before starting the ```servo.launch.py``` and then launch it. 
 If you want to go back and use MoveIt2 as the planer kill the ```servo.launch.py``` and use MoveIt2 as normal.
-Something like this or:
+Something like this or similar as start before launch of ```servo.launch.py```:
 ![pingpong](https://user-images.githubusercontent.com/6362413/159897960-af776ca5-09c8-4c21-9e53-0667a05d58a4.PNG)
 
 
