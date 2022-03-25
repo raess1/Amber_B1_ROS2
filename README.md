@@ -102,7 +102,22 @@ On Desktop:
 ros2 launch amber_arm_moveit_config demo.launch.py
 ```
 
-#### Without HW, Fake robot (Demo sim)
+- Terminal 2:
+
+```bash
+ros2 run joint_trajectory_relay joint_trajectory_relay.py
+```
+
+- Terminal 3:
+
+```bash
+ros2 launch amber_arm_servo servo.launch.py
+```
+
+### Demo fake robot (without arm)
+On Desktop:
+- Terminal 1:
+
 ```bash
 ros2 launch amber_arm_moveit_config demo.launch.py fake_robot:=true
 ```
@@ -110,15 +125,10 @@ ros2 launch amber_arm_moveit_config demo.launch.py fake_robot:=true
 - Terminal 2:
 
 ```bash
-ros2 run joint_trajectory_relay joint_trajectory_relay.py
-```
-#### Without HW, Fake robot this launch is not needed. (Demo sim)
-
-- Terminal 3:
-
-```bash
 ros2 launch amber_arm_servo servo.launch.py
 ```
+
+
 
 ### Notes on servo launch ```servo.launch.py```
 Before starting this, move the robot to a starting point away from the zero state to avoid triggerers of singularity.
