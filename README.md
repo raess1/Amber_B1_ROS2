@@ -102,7 +102,7 @@ On Desktop:
 ros2 launch amber_arm_moveit_config demo.launch.py
 ```
 
-Without HW, Fake robot 
+#### Without HW, Fake robot (Demo sim)
 ```bash
 ros2 launch amber_arm_moveit_config demo.launch.py fake_robot:=true
 ```
@@ -112,7 +112,7 @@ ros2 launch amber_arm_moveit_config demo.launch.py fake_robot:=true
 ```bash
 ros2 run joint_trajectory_relay joint_trajectory_relay.py
 ```
-Without HW, Fake robot this launch is not needed.
+#### Without HW, Fake robot this launch is not needed. (Demo sim)
 
 - Terminal 3:
 
