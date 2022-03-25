@@ -89,7 +89,7 @@ This enables:
 - Launching of setup scripts via `ros2 launch amber_* <launch_script>`
 - Discoverability of shared resources
 
-### Running MoveIt2 and Amber b1
+### Running MoveIt2 and Amber B1 (Real hardware launch)
 
 On Robot:
 - `sudo -sE`
