@@ -1,15 +1,23 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:macro name="amberb1_ros2_control" params="prefix is_hw is_ethercat">
-        <ros2_control name="amber_b1_position" type="system">
+    <xacro:macro name="amber_arm" params="prefix is_hw is_ethercat">
+        <ros2_control name="amber_arm" type="system">
             <hardware>
                 <plugin>AmberB1Hardware</plugin>
                 <param name="is_hw">${is_hw}</param>
                 <param name="is_ethercat">${is_ethercat}</param>
             </hardware>
-            <hardware>
+        <xacro:if value="${gazebo}">
+         <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+         </hardware>
+        </xacro:if>
+        <xacro:unless value="${gazebo}">
+             <hardware>
                 <plugin>fake_components/GenericSystem</plugin>
             </hardware>
+        </xacro:unless>
+
 
 
             <joint name="joint1">
@@ -104,5 +112,12 @@
                 <state_interface name="effort"/>
             </joint>
         </ros2_control>
+        <gazebo>
+            <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control_urdf">
+                <robot_param>robot_description</robot_param>
+                <robot_param_node>robot_state_publisher</robot_param_node>
+                <parameters>$(find amber_arm_moveit_config)/config/ros_controllers.yaml</parameters>
+            </plugin>
+        </gazebo>
     </xacro:macro>
 </robot>
