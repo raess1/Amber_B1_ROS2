@@ -1,22 +1,21 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:macro name="amber_arm" params="prefix is_hw is_ethercat">
-        <ros2_control name="amber_arm" type="system">
-                <xacro:if value="${gazebo}">
-            <hardware>
-                <plugin>gazebo_ros2_control/GazeboSystem</plugin>
-            </hardware>
-            <hardware>
+   <ros2_control name="amber_arm_control" type="system">
+      <xacro:if value="${gazebo}">
+         <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+         </hardware>
+      </xacro:if>
+      <xacro:unless value="${gazebo}">
+         <hardware>
+            <plugin>fake_components/GenericSystem</plugin>
+         </hardware>
+      </xacro:unless> 
+        <hardware>
                 <plugin>AmberB1Hardware</plugin>
                 <param name="is_hw">${is_hw}</param>
                 <param name="is_ethercat">${is_ethercat}</param>
-            </hardware>
-                </xacro:if>
-                <xacro:unless value="${gazebo}">
-             <hardware>
-                        <plugin>fake_components/GenericSystem</plugin>
-            </hardware>
-                </xacro:unless>
+        </hardware>               
 
 
 
