@@ -7,16 +7,16 @@
                 <param name="is_hw">${is_hw}</param>
                 <param name="is_ethercat">${is_ethercat}</param>
             </hardware>
-        <xacro:if value="${gazebo}">
-         <hardware>
-            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
-         </hardware>
-        </xacro:if>
-        <xacro:unless value="${gazebo}">
-             <hardware>
-                <plugin>fake_components/GenericSystem</plugin>
+                <xacro:if value="${gazebo}">
+            <hardware>
+                <plugin>gazebo_ros2_control/GazeboSystem</plugin>
             </hardware>
-        </xacro:unless>
+                </xacro:if>
+                <xacro:unless value="${gazebo}">
+             <hardware>
+                        <plugin>fake_components/GenericSystem</plugin>
+            </hardware>
+                </xacro:unless>
 
 
 
