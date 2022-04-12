@@ -60,11 +60,11 @@ cd Amber_B1_ROS2
 git checkout servo
 cd ..
 # Install external dependencies via rosdep
-rosdep install -r --from-paths src --ignore-src --rosdistro ${ROS_DISTRO}
+rosdep install --from-paths src -i -r -y
 # Install backward-ros
 sudo apt install ros-galactic-backward-ros
 # Build with colcon
-colcon build --merge-install --symlink-install --cmake-args "-DCMAKE_BUILD_TYPE=Release"
+colcon build
 ```
 
 ### Sourcing
